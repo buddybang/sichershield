@@ -1,0 +1,205 @@
+/* ====================================== */
+/* Endpoint Security Implementation & Maintenance Styles */
+/* ====================================== */
+
+/* Endpoint Hero Section */
+.endpoint-hero {
+  position: relative;
+  width: 100%;
+  background: url('/images/hero-endpoint.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out, slideDownHero 2s ease-in-out;
+}
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 60px; /* Increase padding for more internal space */
+  border-radius: 8px;
+  display: inline-block;
+  /* You can set an explicit width or use a percentage: */
+  width: 100%; /* or for example: width: 600px; */
+  /* Optionally you can add a min-height: */
+  min-height: 150px;
+}
+
+.hero-overlay h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+}
+.hero-overlay p {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+/* ------------------------------ */
+/* Dynamic Box Section with 8 Transparent Boxes */
+/* ------------------------------ */
+/* Remove background images and use a plain background color */
+.dynamic-box-section {
+  position: relative;
+  background-color: #111825;
+  padding: 60px 0; /* Adjust vertical padding as desired */
+}
+.dynamic-box-section .overlay {
+  position: relative;
+  width: 100%;
+  /* Use auto height so content defines the space */
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+/* Overlay for top half */
+.overlay-top,
+.overlay-bottom {
+  margin-bottom: 40px;
+}
+.overlay-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Process Container in overlay-bottom */
+.process-container {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px 30px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin-bottom: 20px;
+  pointer-events: auto;
+  min-height: 50px;
+  width: 100%;
+}
+.process-container h2 {
+  font-size: 1.8em;
+  color: #fff;
+  margin: 0;
+}
+
+/* Boxes Row */
+.boxes-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Each Box: 180px x 180px */
+.box {
+  width: 180px;
+  height: 180px;
+  background: transparent; /* Transparent so the background shows */
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+.box:hover {
+  transform: translateY(-5px);
+}
+.box h3 {
+  font-size: 1.1em;
+  margin: 5px 0;
+  text-align: center;
+}
+.box p {
+  font-size: 0.95em;
+  text-align: center;
+}
+
+/* Transparent boxes initially hidden */
+.transparent-box {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* ------------------------------ */
+/* Call-to-Action Section */
+.cta-section {
+  padding: 60px 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+.cta-section .container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.cta-section .container p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.cta-section .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #FF6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-section .btn:hover {
+  transform: scale(1.05);
+  background-color: #e05500;
+}
+
+/* ------------------------------ */
+/* Fancy Reveal Animation for '.reveal' Elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px) scale(0.8) rotate(3deg);
+}
+.reveal.active {
+  animation: fancyEntry 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes fancyEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.8) rotate(3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(2px) scale(0.98) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* Basic fadeIn animation for hero texts */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ------------------------------ */
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .boxes-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .box {
+    width: 150px;
+    height: 150px;
+  }
+}

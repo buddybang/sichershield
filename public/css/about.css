@@ -1,0 +1,166 @@
+/* ====================================== */
+/* About Page – Sicher Shield Consultancy */
+/* ====================================== */
+
+/* About Hero Section */
+.about-hero {
+  position: relative;
+  width: 100%;
+  background: url('/images/aboutus.png') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out, slideDownHero 2s ease-in-out;
+}
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px 60px;
+  border-radius: 8px;
+  display: inline-block;
+  width: 100%;
+  max-width: 100%; /* Constrain the width for larger screens */
+  min-height: 150px;
+}
+.hero-overlay h1 {
+  font-size: 2.8em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.hero-overlay p {
+  font-size: 1.2em;
+  margin: 0;
+  color: #fff;
+}
+
+/* Common Content Section */
+.content-section {
+  padding: 60px 20px;
+  background-color: #111825;
+  color: #fff;
+  text-align: center;
+}
+.content-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.content-section p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* About Story Section Specific */
+.about-story {
+  background-color: #111825;
+}
+
+/* Why Choose Us Section */
+.why-choose {
+  background-color: #111825;
+}
+.features-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+.features-list li {
+  margin: 10px 0;
+  font-size: 1.1em;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+}
+.features-list .icon {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: #FF6600;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  background-color: #222;
+  padding: 60px 20px;
+  text-align: center;
+}
+.cta-section .container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.cta-section .container p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+.cta-section .btn {
+  padding: 12px 30px;
+  background: #FF6600;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-decoration: none;
+  color: #fff;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-section .btn:hover {
+  transform: scale(1.05);
+  background-color: #e05500;
+}
+
+/* ------------------------------ */
+/* Fancy Reveal Animation for '.reveal' Elements */
+.reveal {
+  opacity: 0;
+  transform: translateY(25px) scale(0.8) rotate(3deg);
+}
+.reveal.active {
+  animation: fancyEntry 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+@keyframes fancyEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.8) rotate(3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.05) rotate(-1deg);
+  }
+  80% {
+    transform: translateY(2px) scale(0.98) rotate(0.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* Basic fadeIn animation for initial loaded elements */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-overlay h1 {
+    font-size: 2em;
+  }
+  .hero-overlay p {
+    font-size: 1em;
+  }
+  .content-section h2 {
+    font-size: 1.8em;
+  }
+  .features-list li {
+    font-size: 1em;
+  }
+}

@@ -1,0 +1,187 @@
+/* Service Hero Section */
+.service-hero {
+  position: relative;
+  width: 100%;
+  background: url('/images/hero-CyberSecurity.jpg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out, slideDownHero 2s ease-in-out;
+}
+
+@keyframes slideDownHero {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Cybersecurity-Specific Styles and Animations */
+
+/* General Reveal Animation for Elements (used on other elements if needed) */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------------------
+   Custom Animations for Card Icon & Paragraph
+   ------------------------------- */
+
+/* For the icon: fade in only.  
+   Add classes: "reveal fadeIn" to the card-icon container. */
+.card-icon.fadeIn {
+  opacity: 0;
+}
+.card-icon.fadeIn.active {
+  animation: fadeInIcon 0.6s ease forwards;
+}
+@keyframes fadeInIcon {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* For the paragraph: Slide from left to right.  
+   Add classes: "reveal slideIn" to the <p> element inside card-content. */
+.card-content p.slideIn {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+.card-content p.slideIn.active {
+  animation: slideInFromLeft 0.6s ease forwards;
+}
+@keyframes slideInFromLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Solutions Cards Section */
+.solutions-cards {
+  padding: 60px 0; /* Full-width vertical stack */
+  background-color: #111825;
+  color: #ffffff;
+}
+
+/* Vertical Cards Container */
+.cards-vertical {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Each Card as a Table Row With Hover Effects */
+.cards-vertical .card {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  color: #1B263B;
+  padding: 0px 0px;
+  margin: 0;           /* No gap between cards */
+  text-align: left;
+  border: 1px solid #ddd;
+  border-bottom: none; /* Last card gets a bottom border */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.cards-vertical .card:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+.cards-vertical .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Container - Fixed Square without divider */
+.cards-vertical .card-icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  /* No vertical border here */
+}
+
+/* Icon/Image Styling */
+.cards-vertical .card-icon img {
+  max-width: 60px;
+  max-height: 60px;
+}
+
+/* Content Container - Rectangular Area */
+.cards-vertical .card-content {
+  flex: 1;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.cards-vertical .card-content h3 {
+  font-size: 1.25em;
+  margin: 0;
+  margin-bottom: 5px;
+}
+.cards-vertical .card-content p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  padding: 60px 20px;
+  background-color: #111825;
+  color: #ffffff;
+  text-align: center;
+}
+.cta-section .container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.cta-section .container p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+/* CTA Button */
+.cta-section .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #FF6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-section .btn:hover {
+  transform: scale(1.05);
+  background-color: #e05500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .cards-vertical .card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+  }
+  .cards-vertical .card-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+    border-right: none;
+    border-bottom: none;
+    padding-right: 0;
+  }
+  .cards-vertical .card-content {
+    padding-left: 0;
+  }
+}

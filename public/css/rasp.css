@@ -1,0 +1,218 @@
+/* RASP Security Specific Styles & Animations */
+
+/* RASP Hero Section */
+.rasp-hero {
+  /* Override the inherited hero background with a RASP-specific image */
+  position: relative;
+  width: 100%;
+  background: url('/images/hero-rasp.jpeg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 2s ease-in-out, slideDownHero 2s ease-in-out;
+}
+.rasp-hero .hero-content {
+  text-align: center;
+  color: #fff;
+  padding: 40px;
+}
+.rasp-hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out;
+}
+.rasp-hero p {
+  font-size: 1.2em;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeIn 2s ease-in-out 0.5s;
+}
+
+/* RASP Overview Section */
+.rasp-overview {
+  padding: 60px 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+.rasp-overview h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.rasp-overview p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* RASP Features Section */
+.rasp-features {
+  padding: 60px 20px;
+  background-color: #111825;
+  color: #fff;
+  text-align: center;
+}
+.rasp-features h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+.features-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.feature-card {
+  background: #fff;
+  color: #1B263B;
+  border-radius: 5px;
+  padding: 20px;
+  width: 270px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.feature-card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 15px;
+}
+.feature-card h3 {
+  font-size: 1.5em;
+  margin: 10px 0;
+}
+.feature-card p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* RASP Process Section */
+.rasp-process {
+  padding: 60px 20px;
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+}
+.rasp-process h2 {
+  font-size: 2em;
+  margin-bottom: 40px;
+}
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.process-steps .step {
+  background: #1B263B;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 200px;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.process-steps .step:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+.process-steps .step h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.process-steps .step p {
+  font-size: 1em;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Override the basic reveal animation with a fancy entry */
+.reveal {
+  opacity: 0;
+  /* Initial transform before the fancy animation starts */
+  transform: translateY(50px) scale(0.95) rotate(5deg);
+  /* We'll use the keyframe animation when activated */
+}
+
+.reveal.active {
+  /* Use a custom keyframe that fades in, slides, scales up and rotates into place */
+  animation: fancyEntry 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fancyEntry {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95) rotate(5deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.02) rotate(-2deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0);
+  }
+}
+
+/* Call-to-Action Section */
+.cta-section {
+  padding: 60px 20px;
+  background-color: #111825;
+  color: #ffffff;
+  text-align: center;
+}
+.cta-section .container h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+.cta-section .container p {
+  font-size: 1.1em;
+  max-width: 800px;
+  margin: 0 auto 30px;
+}
+/* CTA Button */
+.cta-section .btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #FF6600;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.cta-section .btn:hover {
+  transform: scale(1.05);
+  background-color: #e05500;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .features-grid,
+  .process-steps {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .feature-card, .process-steps .step {
+    max-width: 100%;
+    width: 90%;
+  }
+}

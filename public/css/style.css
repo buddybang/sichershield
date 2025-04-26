@@ -1,0 +1,314 @@
+/* Universal Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, main {
+  margin: 0;
+  padding: 0;
+  /* Use Helvetica Neue as primary, paired with Georgia/Garamond as serif fallbacks */
+  font-family: "Helvetica Neue", Georgia, Garamond, serif;
+  background: #111825; /* Dark Navy as base background */
+  color: #ffffff;
+}
+
+/* Universal Reset for Content Section */
+.content-section, .core-services-heading, .services-slider {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* Header Styling */
+header {
+  background: #000000;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-height: 50px;
+}
+
+.company-name {
+  margin-left: 10px;
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  font-family: Cooper Black;
+}
+
+/* Navigation Menu */
+nav .menu {
+  list-style: none;
+  display: flex;
+}
+
+nav .menu li {
+  position: relative;
+  margin-right: 20px;
+}
+
+nav .menu li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+nav .menu li a:hover {
+  color: #FF6600;
+}
+
+/* Submenu Styling */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1B263B;
+  padding: 10px 0;
+  margin: 0;
+  min-width: 250px;
+  z-index: 100;
+}
+
+nav .menu li.dropdown:hover > .submenu {
+  display: block;
+}
+
+/* Submenu Item Links - Removed 3D effect and shadow */
+.submenu li a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 5px 15px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background: #415A77;
+  border-radius: 4px;
+}
+
+/* Submenu Circular Icons - Removed 3D effect and shadow */
+.submenu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  overflow: hidden;
+  transition: none;
+}
+
+.submenu-icon:hover {
+  /* No hover effect */
+}
+
+/* Icon/Image Inside Submenu Circle - Removed 3D effect and drop-shadow */
+.submenu-icon img {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+  display: block;
+  transition: none;
+  filter: none;
+}
+
+/* Default Hero Section (for most pages) */
+.hero {
+  position: relative;
+  width: 100%;
+  background: url('/images/hero-bg.jpeg') no-repeat center center;
+  background-size: cover;
+  color: #fff;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* Note: "center-right" is not valid. Consider using "center" if needed. */
+  padding: 20px;
+  /* Now only a fade-in effect is applied – no zoom effect */
+  animation: fadeIn 2s ease-in-out;
+  filter: none;
+}
+
+/* Fade-in Animation Keyframes */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Rotating Image – now a shield shape with a center glow */
+.rotating-image {
+  position: absolute;
+  right: -150px; 
+  top: 50%;       
+  transform: translateY(-50%) rotate(45deg);
+  width: 100px;
+  height: 100px;
+  border-radius: 70%;
+  object-fit: cover;
+  opacity: 0;
+  z-index: 10;
+  animation: rotateInFromRight 2s ease-out forwards, glowPulse 1.5s ease-in-out 2s infinite;
+}
+
+@keyframes rotateInFromRight {
+  0% {
+    right: -150px;
+    transform: translateY(-50%) rotate(45deg);
+    opacity: 0;
+  }
+  100% {
+    right: 180px;
+    transform: translateY(-50%) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.8);
+  }
+  50% {
+    box-shadow: 0 0 20px 5px rgba(255, 255, 255, 1);
+  }
+}
+
+.hero-content {
+  animation: slideInUp 1.5s ease forwards;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Core Services Heading */
+.core-services-heading {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+/* Content Section Styling (Parent Container) */
+.content-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* Services Slider */
+.services-slider {
+  overflow: hidden;
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  animation: scrollLeft 20s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Slider Item Box (Service Box) */
+.service-box {
+  background: #ffffff;
+  color: #1B263B;
+  flex-shrink: 0;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: perspective(600px) rotateX(7deg) rotateY(-7deg) translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.service-box img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Service Text Styling */
+.service-box h4 {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.service-box p {
+  font-size: 0.9em;
+  color: #1B263B;
+  margin: 0;
+}
+
+/* Footer Styling */
+footer {
+  background: #000000;
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+}
+
+.footer-links a {
+  color: #E0E1DD;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: text-decoration 0.3s ease;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
