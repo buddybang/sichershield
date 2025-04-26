@@ -2,7 +2,7 @@
 .service-hero {
   position: relative;
   width: 100%;
-  background: url('/images/hero-CyberSecurity.jpg') no-repeat center center;
+  background: url('/images/hero-cybersecurity.jpg') no-repeat center center;
   background-size: cover;
   color: #fff;
   min-height: 60vh;
